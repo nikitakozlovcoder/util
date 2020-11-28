@@ -13,4 +13,17 @@ use App\Http\Controllers\PagesController;
 |
 */
 
-Route::get('/', [PagesController::class, 'home']);
+Route::get('/', 'PagesController@home');
+Route::get('/admin', 'AdminController@index');
+Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+
+#auth middleware
+Auth::routes();
+#POST     | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web        |
+#|        | GET|HEAD | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web        |
+#|        | POST     | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web        |
+#|        | GET|HEAD | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web        |
+#|        | GET|HEAD | register               |                  | Closure                                                                | web        |
+#|        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web        |
+Route::get('/register', function(){abort(404);});
+Route::post('/register', function(){abort(404);});

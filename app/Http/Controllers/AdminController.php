@@ -5,24 +5,27 @@ use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
-        
+        return view('admin.index');
     }
 
     public function pages($id)
     {
-        
+
     }
 
     public function news_index()
     {
-        
+
     }
 
     public function news($id)
     {
-        
+
     }
 }
