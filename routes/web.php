@@ -32,3 +32,6 @@ Auth::routes();
 #|        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web        |
 Route::get('/register', function(){abort(404);});
 Route::post('/register', function(){abort(404);});
+Route::get('/password/reset', function(){abort(404);});
+Route::post('/password/reset', function(){abort(404);});
+Route::get('password/reset/{token}', function(){abort(404);});

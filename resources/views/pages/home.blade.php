@@ -2,6 +2,9 @@
 <!--@section('title', 'Page Title')-->
 
 @section('content')
-	<p>hi!</p>
+	<div class="container">
+		<p>hi!</p>
+	</div>
+
 
 @endsection
