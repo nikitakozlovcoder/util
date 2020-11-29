@@ -17,6 +17,11 @@ Route::get('/', 'PagesController@home');
 Route::get('/admin', 'AdminController@index');
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
+#filemanager
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
 #auth middleware
 Auth::routes();
 #POST     | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web        |
