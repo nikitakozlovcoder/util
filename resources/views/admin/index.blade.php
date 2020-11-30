@@ -8,15 +8,27 @@ admin!
 <script type="text/javascript">
 
 
+  function linkListener(dialog)
+  {
+    console.log("detach");
+    var inps = $('.mce-window input');
+    inps[1].value = inps[0].value.split('/').pop();
+  }
 
 var route_prefix = "/filemanager";
 
 var editor_config = {
+        setup: function(editor) {
+              editor.on('CloseWindow', function(dialog) {
+                linkListener(dialog);
+              });
+      },
       path_absolute : "",
       selector: "textarea[name=content]",
       plugins: [
         "link image table fullscreen"
       ],
+      menubar: `change view insert format table`,
       toolbar: `fullscreen | undo redo | styleselect | bold italic | alignleft
                 aligncenter alignright alignjustify |
                 bullist numlist outdent indent | link image`,
@@ -31,7 +43,7 @@ var editor_config = {
 
         var cmsURL = editor_config.path_absolute + route_prefix + '?field_name=' + field_name;
         if (type == 'image') {
-          cmsURL = cmsURL + "&type=Images";
+          cmsURL = cmsURL + "&type=Files";
         } else {
           cmsURL = cmsURL + "&type=Files";
         }
@@ -48,6 +60,7 @@ var editor_config = {
     };
 
     tinymce.init(editor_config);
+
 
 </script>
 @endsection
