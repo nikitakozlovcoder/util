@@ -9,14 +9,17 @@
             <img class="logo-img" src="{{ asset('logo.jpg') }}" alt="">
             <div class="brand-text">
               Уютный <span class="brand-char">Д</span>ом
+            </div></a>
+            <div class="nav-menu-open">
+              <img src="{{asset('assets/img/menu.png')}}" alt="">
             </div>
-
-          </a>
+          <hr>
           <!-- end logo -->
           <!-- top menu -->
           <div class="navigation">
             <nav>
               <ul class="nav topnav">
+
                 <li class="dropdown active">
                   <a href="index.html">Home</a>
                 </li>
@@ -36,14 +39,21 @@
                   <a href="#">Blog</a>
 
                 </li>
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
+
               </ul>
             </nav>
           </div>
           <!-- end menu -->
+
         </div>
       </div>
     </div>
   </header>
+  <script>
+
+  document.querySelector('.nav-menu-open').addEventListener('click',  function() {
+      console.log(document.querySelector('.navbar-fixed-top'));
+      document.querySelector('.navbar-fixed-top').classList.toggle('navbar-fixed-top-opened');
+  })
+
+  </script>

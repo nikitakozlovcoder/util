@@ -26,12 +26,12 @@ var editor_config = {
       path_absolute : "",
       selector: "textarea[name=content]",
       plugins: [
-        "link image table fullscreen"
+        "link image table fullscreen hr wordcount"
       ],
       menubar: `change view insert format table`,
       toolbar: `fullscreen | undo redo | styleselect | bold italic | alignleft
                 aligncenter alignright alignjustify |
-                bullist numlist outdent indent | link image`,
+                bullist numlist outdent indent | link image | hr `,
       language: 'ru',
       //toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
       relative_urls: false,
