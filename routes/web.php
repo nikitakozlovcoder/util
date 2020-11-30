@@ -14,7 +14,10 @@ use App\Http\Controllers\PagesController;
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('/about', 'PagesController@about');
+Route::get('/news', 'PagesController@news');
 Route::get('/admin', 'AdminController@index');
+
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 #filemanager

@@ -18,7 +18,6 @@
     <!-- Styles-->
 
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-
     <link href="{{ asset('assets/css/bootstrap-responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/docs.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/prettyPhoto.css') }}" rel="stylesheet">

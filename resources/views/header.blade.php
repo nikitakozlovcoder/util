@@ -5,7 +5,7 @@
       <div class="navbar-inner">
         <div class="container">
           <!-- logo -->
-          <a class="brand logo" href="index.html">
+          <a class="brand logo" href="/">
             <img class="logo-img" src="{{ asset('logo.jpg') }}" alt="">
             <div class="brand-text">
               Уютный <span class="brand-char">Д</span>ом
@@ -20,15 +20,15 @@
             <nav>
               <ul class="nav topnav">
 
-                <li class="dropdown active">
-                  <a href="index.html">Home</a>
+                <li class="dropdown {{ Request::is('/') ? 'active' : '' }}">
+                  <a href="/">Home</a>
                 </li>
-                <li class="dropdown">
-                  <a href="#">Features</a>
+                <li class="dropdown {{ Request::is('about') ? 'active' : '' }}">
+                  <a href="/about">About</a>
 
                 </li>
-                <li class="dropdown">
-                  <a href="#">Pages</a>
+                <li class="dropdown {{ Request::is('news') ? 'active' : '' }}">
+                  <a href="/news">News</a>
 
                 </li>
                 <li class="dropdown">
