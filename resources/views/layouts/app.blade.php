@@ -31,9 +31,9 @@
 </head>
 <body>
       @include('header')
-      <main style="margin-top: 100px;">
+      
         @yield('content')
-      </main>
+      
 
       @include('footer')
 </body>

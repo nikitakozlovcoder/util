@@ -17,6 +17,7 @@
   </ul>
   <div class="tab-content">
   <div class="tab-pane active" id="tab1">
+    <br>
     <textarea name="content" id="edit">{{$page->content}}</textarea>
 
   </div>

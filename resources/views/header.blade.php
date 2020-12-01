@@ -32,7 +32,7 @@
 
                 </li>
                 <li class="dropdown">
-                  <a href="#">Portfolio</a>
+                  <a href="/tariffs">Тарифы</a>
 
                 </li>
                 <li class="dropdown">
