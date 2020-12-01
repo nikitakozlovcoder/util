@@ -20,7 +20,18 @@
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+   
     <style>
+      .nav.nav-tabs li{
+        padding: 20px;
+      }
+      .nav.nav-tabs li a.active{
+        font-weight: bold;
+      }
+      .admin-link{
+        color: inherit;
+        font-size: 18px;  
+      }
       .btn-primary {
         background-color: #81ab35;
         border-color: #81ab35;
@@ -52,10 +63,11 @@
         border-color: #81ab35 !important;
       }
     </style>
+     
 </head>
 <body>
 
-      <main style="">
+      <main style="padding-bottom: 40px;">
         @yield('content')
       </main>
 

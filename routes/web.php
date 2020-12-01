@@ -16,8 +16,10 @@ use App\Http\Controllers\PagesController;
 Route::get('/', 'PagesController@home');
 Route::get('/about', 'PagesController@about');
 Route::get('/news', 'PagesController@news');
+Route::get('/tariffs', 'PagesController@tariffs');
 Route::get('/admin', 'AdminController@index');
-
+Route::get('/admin/about', 'AdminController@edit_about');
+Route::post('/admin/about', 'AdminController@update_about');
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 #filemanager

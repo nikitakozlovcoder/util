@@ -48,20 +48,16 @@
     <div class="verybottom">
       <div class="container">
         <div class="row">
-          <div class="span6">
-            <p>
-              &copy; Serenity - All right reserved
-            </p>
-          </div>
+         
           <div class="span6">
             <div class="credits">
               
               <!--  All the links in the footer should remain intact.
                 You can delete the links only if you purchased the pro version.
                 Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity
+                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Serenity-->
               
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
+              Разработано командной <a href="https://nek-web.ru/">NekWeb</a>
             </div>
           </div>
         </div>

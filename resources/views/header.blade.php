@@ -21,14 +21,14 @@
               <ul class="nav topnav">
 
                 <li class="dropdown {{ Request::is('/') ? 'active' : '' }}">
-                  <a href="/">Home</a>
+                  <a href="/">Главная</a>
                 </li>
                 <li class="dropdown {{ Request::is('about') ? 'active' : '' }}">
-                  <a href="/about">About</a>
+                  <a href="/about">О нас</a>
 
                 </li>
                 <li class="dropdown {{ Request::is('news') ? 'active' : '' }}">
-                  <a href="/news">News</a>
+                  <a href="/news">Новости</a>
 
                 </li>
                 <li class="dropdown">

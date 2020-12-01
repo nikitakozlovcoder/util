@@ -33,7 +33,7 @@
   </section>
   <section id="maincontent">
     <div class="container">
-      <div class="row">
+      <div class="row well-row">
         <div class="span4">
           <div class="well" style="padding-top: 35px;">
             <div class="centered">
@@ -82,7 +82,6 @@
       </div>
       <div class="row">
         <div class="span12">
-        
           <h4>Our services</h4>    
           <div>
           Est eiusmod consectetur occaecat mollit voluptate pariatur do. Elit ipsum esse exercitation do non esse exercitation occaecat veniam. Ea commodo veniam officia ullamco aliquip commodo cillum proident. Aliquip tempor aute officia culpa laborum.

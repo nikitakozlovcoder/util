@@ -19,4 +19,9 @@ class PagesController extends Controller
     {
         return view('pages.news');
     }
+    public function tariffs()
+    {
+        return view('pages.tariffs');
+    }
+    
 }
