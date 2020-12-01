@@ -38,11 +38,11 @@
           <div class="well" style="padding-top: 35px;">
             <div class="centered">
              <!-- <i class="icon-circled icon-64 icon-suitcase active"></i> -->
-              <h4>High integrity</h4>
+              <h4>{{$page->title1}}</h4>
               <div class="dotted_line">
               </div>
               <p>
-                Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri. Mel virtute efficiantur ne, zril omnes sed no, sit eu duis semper.
+               {{$page->data1}}
               </p>
             </div>
           </div>
@@ -51,12 +51,12 @@
           <div class="well" style="padding-top: 35px;">
             <div class="centered">
                <!--<i class="icon-circled icon-64 icon-leaf active"></i>-->
-              <h4>Following trends</h4>
+              <h4>{{$page->title2}}</h4>
               <div class="dotted_line">
               </div>
               <p>
-                Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri. Mel virtute efficiantur ne, zril omnes sed no, sit eu duis semper.
-              </p>
+               {{$page->data2}}
+               </p>
             </div>
           </div>
         </div>
@@ -64,12 +64,12 @@
           <div class="well" style="padding-top: 35px;">
             <div class="centered">
                <!--<i class="icon-circled icon-64 icon-coffee active"></i>-->
-              <h4>Have a solid team</h4>
+              <h4>{{$page->title3}}</h4>
               <div class="dotted_line">
               </div>
               <p>
-                Dolorem adipiscing definiebas ut nec. Dolore consectetuer eu vim, elit molestie ei has, petentium imperdiet in pri. Mel virtute efficiantur ne, zril omnes sed no, sit eu duis semper.
-              </p>
+               {{$page->data3}}
+               </p>
             </div>
           </div>
         </div>
@@ -82,14 +82,7 @@
       </div>
       <div class="row">
         <div class="span12">
-          <h4>Our services</h4>    
-          <div>
-          Est eiusmod consectetur occaecat mollit voluptate pariatur do. Elit ipsum esse exercitation do non esse exercitation occaecat veniam. Ea commodo veniam officia ullamco aliquip commodo cillum proident. Aliquip tempor aute officia culpa laborum.
-          <br/><br/>
-          Consectetur laboris cillum reprehenderit nulla. Nostrud consectetur esse et minim minim dolore non. Labore amet pariatur Lorem deserunt ipsum elit ea. Esse do amet consequat Lorem cupidatat nulla excepteur laboris labore consequat irure. Magna ex mollit irure eiusmod aute amet sunt labore sit pariatur. Officia cillum cillum sunt laboris cillum aute reprehenderit ad.
-          <br/><br/>
-          Reprehenderit elit culpa ullamco sunt esse cillum culpa quis cupidatat officia minim. Dolore amet fugiat tempor nulla incididunt irure nisi esse in in occaecat. Proident deserunt aliqua do elit esse dolor tempor elit voluptate in. Tempor minim incididunt aliqua do in. Minim consectetur deserunt irure esse officia pariatur ipsum tempor pariatur nisi. Veniam id occaecat officia ad fugiat et mollit Lorem.
-          </div>      
+          {!!$page->content!!}  
           
           <!-- start: Accordion 
           <div class="accordion" id="accordion2">

@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="container">
       <div class="row">
-      <div class="span4">
+      <div class="span3">
           <div class="widget">
             <!-- logo -->
            <a class="brand logo" href="/">
@@ -19,7 +19,7 @@
 						</address>
           </div>
         </div>
-        <div class="span4">
+        <div class="span9">
           <div class="widget">
             <h5>Browse pages</h5>
             <ul class="regular">

@@ -13,7 +13,8 @@ class PagesController extends Controller
     }
     public function about()
     {
-        return view('pages.about');
+        $page = \App\AboutPage::All()->first();      
+        return view('pages.about', ['page' => $page]);
     }
     public function news()
     {

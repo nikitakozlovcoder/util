@@ -23,7 +23,7 @@
                       </p>
                      <!-- <a class="btn btn-success" href="#">Learn more &raquo;</a>-->
                     </div>
-                    <img class="slider_img animate-in home-big-img" src="assets/img/city.png" alt="" style="width: 64%;">
+                    <img class="slider_img animate-in home-big-img" src="assets/img/city.png" alt="" >
                   </li>
                   <!-- Layer 2 -->
                 
@@ -36,7 +36,7 @@
       </div>
     </div>
   </section>
-  <main style="margin-top: 570px;">
+  <main style="margin-top: 570px;" class="home-main">
   <section id="maincontent">
     <div class="container">
       <div class="row">
