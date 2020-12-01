@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('content')
@@ -5,18 +6,58 @@
 @include('admin.header')
 
 <div class="container">
-<h3>Страницы</h3>
+<h3>Тарифы</h3>
 <hr>
-<ul class="nav nav-pills nav-stacked" style="display: block;">
-  <li><a href="/admin/about" class="admin-link">О нас</a></li>
-  <li><a href="/admin/tariffs" class="admin-link">Тарифы</a></li>  
-</ul>
+<form action="/admin/tariffs" method="POST">
+  @csrf
+    <br>
+    <textarea name="content" id="edit">{{$page->content}}</textarea>
+    <br>
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    
+</form>
 </div>
 
-<!--<textarea name="content" id="edit"></textarea>
 <script src="{{asset('tinymce/tinymce.min.js')}}" ></script>
 <script type="text/javascript">
 
+  tinyMCE.create('tinymce.plugins.MailToPlugin', {
+
+  init : function(ed, url) {
+   ed.addCommand('mceMailTo', function() {
+    var linkText = ed.selection.getContent({format : 'text'});
+    var newText = `<a href='mailto:${linkText}'>${linkText}</a>`
+    ed.execCommand('mceInsertContent', false, newText);
+   });
+
+   // Register example button
+   ed.addButton('mailto', {
+    title : 'Почтовый ящик',
+    cmd : 'mceMailTo',
+    image : '{{asset("assets/img/mail.png")}}'
+   });
+  }
+ });
+  tinyMCE.create('tinymce.plugins.TelToPlugin', {
+
+  init : function(ed, url) {
+   ed.addCommand('mceTelTo', function() {
+    var linkText = ed.selection.getContent({format : 'text'});
+    var newText = `<a href='tel:${linkText}'>${linkText}</a>`
+    ed.execCommand('mceInsertContent', false, newText);
+   });
+
+   // Register example button
+   ed.addButton('telto', {
+    title : 'номер телефона',
+    cmd : 'mceTelTo',
+    image : '{{asset("assets/img/tel.png")}}'
+   });
+  }
+ });
+ // Register plugin with a short name
+  tinyMCE.PluginManager.add('mailto', tinymce.plugins.MailToPlugin);
+  tinyMCE.PluginManager.add('telto', tinymce.plugins.TelToPlugin);
 
   function linkListener(dialog)
   {
@@ -36,17 +77,18 @@
         path_absolute : "",
         selector: "textarea[name=content]",
         plugins: [
-          "link image table fullscreen hr wordcount"
+          "link image table fullscreen hr wordcount mailto telto paste textcolor lists"
         ],
+        paste_as_text: true,
         menubar: `change view insert format table`,
-        toolbar: `fullscreen | undo redo | styleselect | bold italic | alignleft
+        toolbar: `fullscreen | undo redo | styleselect | bold italic | forecolor backcolor | alignleft
                   aligncenter alignright alignjustify |
-                  bullist numlist outdent indent | link image | hr `,
+                  bullist numlist outdent indent | link image | hr mailto  telto | fontsizeselect | numlist bullist`,
         language: 'ru',
         //toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
         relative_urls: false,
         height: 400,
-        width : "80%",
+        width : "100%",
         file_browser_callback : function(field_name, url, type, win) {
           var x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth;
           var y = window.innerHeight|| document.documentElement.clientHeight|| document.getElementsByTagName('body')[0].clientHeight;
@@ -72,5 +114,5 @@
     tinymce.init(editor_config);
 
 
-</script>-->
+</script>
 @endsection

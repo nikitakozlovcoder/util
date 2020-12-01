@@ -22,7 +22,8 @@ class PagesController extends Controller
     }
     public function tariffs()
     {
-        return view('pages.tariffs');
+        $page = \App\TariffPage::All()->first();      
+        return view('pages.tariffs', ['page' => $page]);
     }
     
 }

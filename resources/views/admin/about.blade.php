@@ -88,9 +88,26 @@
    });
   }
  });
+  tinyMCE.create('tinymce.plugins.TelToPlugin', {
 
+  init : function(ed, url) {
+   ed.addCommand('mceTelTo', function() {
+    var linkText = ed.selection.getContent({format : 'text'});
+    var newText = `<a href='tel:${linkText}'>${linkText}</a>`
+    ed.execCommand('mceInsertContent', false, newText);
+   });
+
+   // Register example button
+   ed.addButton('telto', {
+    title : 'номер телефона',
+    cmd : 'mceTelTo',
+    image : '{{asset("assets/img/tel.png")}}'
+   });
+  }
+ });
  // Register plugin with a short name
- tinyMCE.PluginManager.add('mailto', tinymce.plugins.MailToPlugin);
+  tinyMCE.PluginManager.add('mailto', tinymce.plugins.MailToPlugin);
+  tinyMCE.PluginManager.add('telto', tinymce.plugins.TelToPlugin);
 
   function linkListener(dialog)
   {
@@ -110,12 +127,13 @@
         path_absolute : "",
         selector: "textarea[name=content]",
         plugins: [
-          "link image table fullscreen hr wordcount mailto"
+          "link image table fullscreen hr wordcount mailto telto paste textcolor lists"
         ],
+        paste_as_text: true,
         menubar: `change view insert format table`,
-        toolbar: `fullscreen | undo redo | styleselect | bold italic | alignleft
+        toolbar: `fullscreen | undo redo | styleselect | bold italic | forecolor backcolor | alignleft
                   aligncenter alignright alignjustify |
-                  bullist numlist outdent indent | link image | hr mailto  `,
+                  bullist numlist outdent indent | link image | hr mailto  telto | fontsizeselect | numlist bullist`,
         language: 'ru',
         //toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol',
         relative_urls: false,

@@ -17,7 +17,7 @@
                     <div class="info animate-in" style="display: block">
                       <h2 style="padding: 5px 10px;">Уютный Дом</h2>
                       <br>
-                      <h3>Corporate business</h3>
+                      <h3>Управляющая компания</h3>
                       <p class="home-big-text">
                         Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
                       </p>

@@ -31,7 +31,7 @@
                   <a href="/news">Новости</a>
 
                 </li>
-                <li class="dropdown">
+                <li class="dropdown {{ Request::is('tariffs') ? 'active' : '' }}">
                   <a href="/tariffs">Тарифы</a>
 
                 </li>

@@ -20,6 +20,8 @@ Route::get('/tariffs', 'PagesController@tariffs');
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/about', 'AdminController@edit_about');
 Route::post('/admin/about', 'AdminController@update_about');
+Route::get('/admin/tariffs', 'AdminController@edit_tariffs');
+Route::post('/admin/tariffs', 'AdminController@update_tariffs');
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 #filemanager

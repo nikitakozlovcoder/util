@@ -81,7 +81,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="span12">
+        <div class="span12 tiny-text">
           {!!$page->content!!}  
           
           <!-- start: Accordion 

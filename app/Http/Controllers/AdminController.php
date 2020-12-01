@@ -36,6 +36,20 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function edit_tariffs()
+    {
+        $page = \App\TariffPage::All()->first();
+        return view('admin.tariffs', ['page' => $page]);
+    }
+
+    public function update_tariffs(Request $request)
+    {
+        $page = \App\TariffPage::All()->first();
+        $page->content = $this->fallback('content', $request);
+        $page->save();
+        return redirect()->back();
+    }
+
     public function news_index()
     {
 
