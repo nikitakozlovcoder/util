@@ -125,6 +125,7 @@
                 });
         },
         path_absolute : "",
+        fontsize_formats: "8pt 11pt 10pt 12pt 14pt 18pt 24pt 36pt",
         selector: "textarea[name=content]",
         plugins: [
           "link image table fullscreen hr wordcount mailto telto paste textcolor lists"

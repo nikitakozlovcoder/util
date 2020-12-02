@@ -34,94 +34,40 @@
   <section id="maincontent">
     <div class="container">
       <div class="row">
-        <div class="span10 offset 1">
+        <div class="span12">
           <!-- start article 1 -->
-          <article class="blog-post">
+          @foreach($news as $n)
+            <article class="blog-post">
             <div class="post-heading">
-              <h3><a href="#">Example article with thumbnail image</a></h3>
+              <h3>{{$n->title}}</h3>
             </div>
             <div class="row">
+            @if($n->thumb != '')
               <div class="span4">
                 <div class="post-image">
-                  <a href="#"><img src="assets/img/dummies/blog1.jpg" alt="" /></a>
+                  <a href="{{$n->thumb}}"><img src="{{$n->thumb}}" alt="" /></a>
                 </div>
               </div>
-              <div class="span6">
-                <ul class="post-meta">
-                  <li class="first"><i class="icon-calendar"></i><span>March 03, 2013</span></li>
+            @endif
+              
+              <div class="{{($n->thumb != '') ? 'span6' : 'span10' }}">
+                <ul class="span12 post-meta">
+                  <li class="first" style="font-size: 12px;"><i class="icon-calendar" ></i><span>{{$n->mydate}}</span></li>
                 <!--  <li><i class="icon-list-alt"></i><span><a href="#">3 comments</a></span></li>
                   <li class="last"><i class="icon-tags"></i><span><a href="#">Design</a>, <a href="#">Blog</a>, <a href="#">Tutorial</a></span></li> -->
                 </ul>
                 <div class="clearfix">
                 </div>
-                <p>
-                  Ei eos suavitate forensibus mnesarchum. Eu est timeam vocibus, an nostro aliquam adipiscing quo. Zril equidem et quo, ad albucius scripserit sit. Vis constituto deseruisse an, interesset reprehendunt et mel, gloriatur concludaturque pro no. At ludus mediocritatem
-                  qui, no vituperata assueverit accommodare his.
-                </p>
-                <button class="btn btn-small btn-success" type="button">Read more</button>
+               {!! $n->content !!}
+                <!--<button class="btn btn-small btn-success" type="button">Read more</button>-->
               </div>
             </div>
           </article>
-          <!-- end article 1 -->
-          <!-- start article 2 -->
-          <article class="blog-post">
-            <div class="post-heading">
-              <h3><a href="#">This post uses nice video post format</a></h3>
-            </div>
-            <div class="row">
-              
-              <div class="span10">
-                <ul class="post-meta">
-                  <li class="first"><i class="icon-user"></i><span>March 03, 2013</span></li>
-                  
-                </ul>
-                <div class="clearfix">
-                </div>
-                <p>
-                  Ei eos suavitate forensibus mnesarchum. Eu est timeam vocibus, an nostro aliquam adipiscing quo. Zril equidem et quo, ad albucius scripserit sit. Vis constituto deseruisse an, interesset reprehendunt et mel, gloriatur concludaturque pro no. At ludus mediocritatem
-                  qui, no vituperata assueverit accommodare his.
-                </p>
-                <button class="btn btn-small btn-success" type="button">Read more</button>
-              </div>
-            </div>
-          </article>
-          <!-- end article 2 -->
-          <!-- start article 3 -->
-          <article class="blog-post">
-            <div class="post-heading">
-              <h3><a href="#">Great blog post with quote post format</a></h3>
-            </div>
-            <div class="row">
-              <div class="span3">
-                <div class="post-image">
-                  <a href="#"><img src="assets/img/dummies/blog3.jpg" alt="" /></a>
-                </div>
-              </div>
-              <div class="span7">
-                <ul class="post-meta">
-                  <li class="first"><i class="icon-user"></i><span>March 03, 2013</span></li>
-                  
-                </ul>
-                <div class="clearfix">
-                </div>
-                <p>
-                  Ei eos suavitate forensibus mnesarchum. Eu est timeam vocibus, an nostro aliquam adipiscing quo. Zril equidem et quo, ad albucius scripserit sit. Vis constituto deseruisse an, interesset reprehendunt et mel, gloriatur concludaturque pro no. At ludus mediocritatem
-                  qui, no vituperata assueverit accommodare his.
-                </p>
-                <button class="btn btn-small btn-success" type="button">Read more</button>
-              </div>
-            </div>
-          </article>
-          <!-- end article 3 -->
-          <div class="pagination">
-            <ul>
-              <li><a href="#">Prev</a></li>
-              <li><a href="#">1</a></li>
-              <li class="active"><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
+          @endforeach
+          
+          
+          <div class="pagination" style="text-align: center;">
+            {{$news->links()}}
           </div>
         </div>
         <!--<div class="span4">

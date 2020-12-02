@@ -28,6 +28,7 @@
     <link href="{{ asset('assets/color/default.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootbase.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+    
 </head>
 <body>
       @include('header')

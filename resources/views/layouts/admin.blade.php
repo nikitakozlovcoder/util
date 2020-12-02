@@ -22,6 +22,27 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
    
     <style>
+      .page-item.active .page-link{
+        background-color: #81ab35;
+        border-color: #81ab35;
+      }
+      .page-link {
+        color: #81ab35;
+      }
+      img{
+        max-width: 100%;
+      }
+      .news{     
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0px rgb(0 0 0 / 5%);
+        padding-top: 15px;
+        padding-bottom: 25px;
+      }
+      .news .news-admin-img{
+        max-height: 300px;
+        object-fit: contain;
+        width: 100%;
+      }
       .nav.nav-tabs li{
         padding: 20px;
       }

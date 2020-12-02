@@ -52,8 +52,13 @@ class AdminController extends Controller
 
     public function news_index()
     {
-        $news = \App\News::All();
+        $news = \App\News::paginate(5);
         return view('admin.news_index', ['news'=> $news]);
+    }
+    public function delete_news($id)
+    {
+        $news = \App\News::destroy($id);
+        return redirect()->back();
     }
 
     public function edit_news($id)
@@ -62,8 +67,14 @@ class AdminController extends Controller
         return view('admin.news', ['news'=> $news]);
     }
 
-    public function update_news($id)
+    public function update_news($id, Request $request)
     {
+        $news = \App\News::FindOrFail($id);
+        $news->title = $this->fallback('title', $request);
+        $news->mydate = $this->fallback('date', $request);
+        $news->thumb = $this->fallback('thumb', $request);
+        $news->content = $this->fallback('content', $request);
+        $news->save();
         return redirect()->route('admin.news_index');
     }
     public function new_news()

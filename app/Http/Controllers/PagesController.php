@@ -18,7 +18,8 @@ class PagesController extends Controller
     }
     public function news()
     {
-        return view('pages.news');
+        $news = \App\News::paginate(5);
+        return view('pages.news', ['news'=> $news]);
     }
     public function tariffs()
     {

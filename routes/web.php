@@ -30,7 +30,7 @@ Route::post('/admin/news/new', 'AdminController@create_news');
 
 Route::get('/admin/news/{id}', 'AdminController@edit_news');
 Route::post('/admin/news/{id}', 'AdminController@update_news');
-
+Route::post('/admin/news/{id}/delete', 'AdminController@delete_news');
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
 #filemanager
