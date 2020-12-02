@@ -52,12 +52,35 @@ class AdminController extends Controller
 
     public function news_index()
     {
-
+        $news = \App\News::All();
+        return view('admin.news_index', ['news'=> $news]);
     }
 
-    public function news($id)
+    public function edit_news($id)
     {
+        $news = \App\News::FindOrFail($id);
+        return view('admin.news', ['news'=> $news]);
+    }
 
+    public function update_news($id)
+    {
+        return redirect()->route('admin.news_index');
+    }
+    public function new_news()
+    {
+        $news = new \App\News();
+        return view('admin.news', ['news'=> $news]);
+    }
+
+    public function create_news(Request $request)
+    {
+        $news = new \App\News();
+        $news->title = $this->fallback('title', $request);
+        $news->mydate = $this->fallback('date', $request);
+        $news->thumb = $this->fallback('thumb', $request);
+        $news->content = $this->fallback('content', $request);
+        $news->save();
+        return redirect()->route('admin.news_index');
     }
     
 }
