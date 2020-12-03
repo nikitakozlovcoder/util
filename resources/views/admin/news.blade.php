@@ -23,6 +23,7 @@
         
     </div>
     <br>
+    
     <label for="thumb">Изображение</label>
     <div class="input-group">
         
@@ -42,7 +43,7 @@
     <br>
     <div class="form-group">
         <label for="date">Дата</label>
-        <input type="text" class="form-control" id="date" placeholder="Введите дату" name="date" value='{{$news->mydate}}'>
+        <input type="text" class="form-control" id="date" placeholder="Введите дату" name="date" value='{{$news->mydate}}' required>
         
     </div>
     <div class="form-group">

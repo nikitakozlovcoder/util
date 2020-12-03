@@ -58,7 +58,10 @@
                 </ul>
                 <div class="clearfix">
                 </div>
-               {!! $n->content !!}
+                <div class="tiny-text">
+                {!! $n->content !!}
+                </div>
+               
                 <!--<button class="btn btn-small btn-success" type="button">Read more</button>-->
               </div>
             </div>

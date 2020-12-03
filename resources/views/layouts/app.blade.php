@@ -27,6 +27,7 @@
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/color/default.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootbase.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     
 </head>
@@ -38,5 +39,10 @@
 
       @include('footer')
 </body>
-
+<script>
+$( "table").wrap( "<div class='table-responsive'></div>" );
+$('table').each(function() {
+  $(this).addClass('table')
+})
+</script>
 </html>

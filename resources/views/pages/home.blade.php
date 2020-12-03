@@ -2,7 +2,7 @@
 <!--@section('title', 'Page Title')-->
 
 @section('content')
-	<section id="intro" style=" width: 100vw; margin-top: 85px; position: absolute;">
+	<section id="intro" style="width: 100vw; min-width: 320px; margin-top: 85px; position: absolute;">
     	<div class="jumbotron masthead">
       <div class="container">
         
@@ -85,7 +85,7 @@
         <div class="span12">
           <div class="tagline centered">
             <div class="row">
-              <div class="span12">
+              <div class="span12" style="margin-left: 0;">
                 <div class="tagline_text">
                   <h3>Lorem ipsum dolor sit amet.</h2>
                   <p>
@@ -108,72 +108,31 @@
           <div class="span12">
             <h3>Свежие новости</h3>
           </div>
-          <div class="span4">
-            <div class="post-image">
-              <a href="post_right_sidebar.html">
-					<img src="assets/img/dummies/blog1.jpg" alt="">
-					</a>
+         @foreach($news as $n)      
+            <div class="span4" style="margin-top: 30px;">
+              <div class="post-image">
+                <a href="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}"><img src="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}" alt=""></a>
+              </div>
+             <!-- <div class="entry-meta">
+                <i class="icon-square icon-48 icon-pencil left"></i>
+                <span class="date">{{$n->mydate}}</span>
+              </div>
+               end .entry-meta -->
+              <div class="entry-body" style="margin-left: 0;">
+                  
+                  <span class="date">{{$n->mydate}}</span>
+                  
+                  <h5 class="" style="padding-top: 10px;">{{$n->title}}</h5>
+                
+                <div class="tiny-text">
+                  {!! $n->content !!}
+                </div>
+              </div>
+              <!-- end .entry-body -->
+              <div class="clear">
+              </div>
             </div>
-            <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-pencil left"></i></a>
-              <span class="date">Sep 17 <br>
-					2013</span>
-            </div>
-            <!-- end .entry-meta -->
-            <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">This is a standard post</h5>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.
-              </p>
-            </div>
-            <!-- end .entry-body -->
-            <div class="clear">
-            </div>
-          </div>
-          <div class="span4">
-            <div class="post-image">
-              <a href="#"><img src="{{asset('assets/img/news.png')}}" alt=""></a>
-            </div>
-            <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-pencil left"></i></a>
-              <span class="date">Sep 17 2013</span>
-            </div>
-            <!-- end .entry-meta -->
-            <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">Example post image format</h5>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa.
-              </p>
-            </div>
-            <!-- end .entry-body -->
-            <div class="clear">
-            </div>
-          </div>
-          <div class="span4">
-            <div class="post-image">
-              <a href="#"><img src="assets/img/dummies/blog2.jpg" alt=""></a>
-            </div>
-            <div class="entry-meta">
-              <a href="#"><i class="icon-square icon-48 icon-facetime-video left"></i></a>
-              <span class="date">Sep 17 2011</span>
-            </div>
-            <!-- end .entry-meta -->
-            <div class="entry-body">
-              <a href="post_right_sidebar.html">
-                <h5 class="title">Amazing video post format</h5>
-              </a>
-              <p>
-                Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
-              </p>
-            </div>
-            <!-- end .entry-body -->
-            <div class="clear">
-            </div>
-          </div>
+          @endforeach    
          
         </div>
       </div>

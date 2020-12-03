@@ -9,7 +9,8 @@ class PagesController extends Controller
 
     public function home()
     {
-        return view('pages.home');
+        $news = \App\News::orderBy('id', 'DESC')->take(3)->get();
+        return view('pages.home', ['news' => $news]);
     }
     public function about()
     {
@@ -18,7 +19,7 @@ class PagesController extends Controller
     }
     public function news()
     {
-        $news = \App\News::paginate(5);
+        $news = \App\News::orderBy('id', 'DESC')->paginate(5);
         return view('pages.news', ['news'=> $news]);
     }
     public function tariffs()

@@ -52,7 +52,7 @@ class AdminController extends Controller
 
     public function news_index()
     {
-        $news = \App\News::paginate(5);
+        $news = \App\News::orderBy('id', 'DESC')->paginate(5);
         return view('admin.news_index', ['news'=> $news]);
     }
     public function delete_news($id)
