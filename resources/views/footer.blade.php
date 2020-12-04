@@ -8,7 +8,7 @@
            <a class="brand logo" href="/">
             
             <div class="brand-text brand-text-footer">
-              Уютный <span class="brand-char">Д</span>ом
+              Уютный <span class="brand-char">М</span>ир
             </div></a>
             <!-- end logo -->
             <address>

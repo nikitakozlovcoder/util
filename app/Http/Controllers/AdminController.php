@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-
+//"/".implode(array_slice(explode("/", "http://localhost/storage/files/shares/LDrziA8 (1).png"), 3), "/");
 class AdminController extends Controller
 {
     
@@ -92,6 +92,32 @@ class AdminController extends Controller
         $news->content = $this->fallback('content', $request);
         $news->save();
         return redirect()->route('admin.news_index');
+    }
+
+    public function new_house()
+    {
+        $house = new \App\House();
+        return view('admin.house', ['house'=> $house]);
+    }
+
+    public function create_house(Request $request)
+    {
+        $house = new \App\House();
+        $house->title = $this->fallback('title', $request);
+        $house->date_in = $this->fallback('date_in', $request);
+        $house->date_out = $this->fallback('date_out', $request);
+        $house->thumb = $this->fallback('thumb', $request);
+        $house->imgs = $this->fallback('imgs', $request, "[]");
+        $house->content = $this->fallback('content', $request);
+        $house->alive = $request->has('alive');
+        $house->date_built = $this->fallback('date_built', $request);
+        $house->cad_number = $this->fallback('cad_number', $request);
+        $house->area_wide = $this->fallback('area_wide', $request);
+        $house->area_small = $this->fallback('area_small', $request);
+        $house->material_wall = $this->fallback('material_wall', $request);
+        $house->material_floor = $this->fallback('material_floor', $request);
+        $house->save();
+        return redirect()->route('admin.house_index');
     }
     
 }

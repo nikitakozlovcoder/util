@@ -49,7 +49,7 @@
 
    // Register example button
    ed.addButton('telto', {
-    title : 'номер телефона',
+    title : 'Номер телефона',
     cmd : 'mceTelTo',
     image : '{{asset("assets/img/tel.png")}}'
    });

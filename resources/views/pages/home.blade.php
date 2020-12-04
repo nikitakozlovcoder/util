@@ -15,7 +15,7 @@
                   <!-- Layer 1 -->
                   <li>
                     <div class="info animate-in" style="display: block">
-                      <h2 style="padding: 5px 10px;">Уютный Дом</h2>
+                      <h2 style="padding: 5px 10px;">Уютный Мир</h2>
                       <br>
                       <h3>Управляющая компания</h3>
                       <p class="home-big-text">
@@ -103,6 +103,7 @@
           <!-- end tagline -->
         </div>
       </div>
+      @if(count($news))
       <div class="row">
         <div class="home-posts">
           <div class="span12">
@@ -135,6 +136,7 @@
           @endforeach    
          
         </div>
+        @endif
       </div>
     </div>
   </section>

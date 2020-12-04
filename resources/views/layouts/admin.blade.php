@@ -22,6 +22,41 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
    
     <style>
+      .admin-imgs {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .admin-img_wrap{
+        position: relative;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+      }
+      .admin-img_del{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #c82333;
+        color: white;
+        font-size: 34px;
+        border-radius: 50%;
+        cursor: pointer;
+        
+      }
+      .admin-img_del div{
+        height: 57px;
+      }
+      .admin-img_wrap img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
       .page-item.active .page-link{
         background-color: #81ab35;
         border-color: #81ab35;

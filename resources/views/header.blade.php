@@ -8,7 +8,7 @@
           <a class="brand logo" href="/">
             <img class="logo-img" src="{{ asset('logo.jpg') }}" alt="">
             <div class="brand-text">
-              Уютный <span class="brand-char">Д</span>ом
+              Уютный <span class="brand-char">М</span>ир
             </div></a>
             <div class="nav-menu-open">
               <img src="{{asset('assets/img/menu.png')}}" alt="">

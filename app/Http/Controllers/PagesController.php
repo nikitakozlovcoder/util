@@ -27,5 +27,10 @@ class PagesController extends Controller
         $page = \App\TariffPage::All()->first();      
         return view('pages.tariffs', ['page' => $page]);
     }
+    public function houses()
+    {
+        #$news = \App\News::orderBy('id', 'DESC')->take(3)->get();
+        return view('pages.houses');
+    }
     
 }
