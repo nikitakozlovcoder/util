@@ -13,10 +13,10 @@
 <div class="container">
 <h3>Дом</h3>
 <hr>
-<form action="" method="POST" autocomplete="off"> 
+<form action="" method="POST" autocomplete="off" id="form"> 
   @csrf
-    <input id="thumb_real" class="form-control" type="text" name="thumb" value='{{$house->thumb}}' hidden>
-    <input id="imgs_real" class="form-control" type="text" name="imgs"  value='{{$house->imgs}}' hidden>
+    <input id="thumb_real" class="form-control" type="text" name="thumb_real" value='{{$house->thumb}}' hidden>
+    <input id="imgs_real" class="form-control" type="text" name="imgs_real"  value='{{$house->imgs}}' hidden>
     <br>
     <div class="form-group">
         <label for="title">Адрес</label>
@@ -68,33 +68,33 @@
                                 </div>
                             </div>
                         </div>
-     <div class="form-group">
+     <div class="form-group" id="out_date">
         <label for="date_out">Дата выхода из управления</label>
-        <input type="text" class="form-control" id="date_out" placeholder="Введите дату" name="date_out"  required>      
+        <input type="text" class="form-control" id="date_out" placeholder="Введите дату" name="date_out" >      
     </div>
     <div class="form-group">
         <label for="date_built">Год постройки</label>
-        <input type="text" class="form-control" id="date_built" placeholder="Введите год" name="date_built"  required>      
+        <input type="text" class="form-control" id="date_built" placeholder="Введите год" name="date_built">      
     </div>
     <div class="form-group">
         <label for="cad_number">Кадастровый номер земельного участка</label>
-        <input type="text" class="form-control" id="cad_number" placeholder="Введите кадастровый номер" name="cad_number"  required>      
+        <input type="text" class="form-control" id="cad_number" placeholder="Введите кадастровый номер" name="cad_number">      
     </div>
      <div class="form-group">
         <label for="area_wide">Общая площадь</label>
-        <input type="number" class="form-control" id="area_wide" placeholder="Введите площадь" name="area_wide"  required>      
+        <input type="number" class="form-control" id="area_wide" placeholder="Введите площадь" name="area_wide" step='0.01'>      
     </div>
     <div class="form-group">
         <label for="area_small">Площадь земельного участка</label>
-        <input type="number" class="form-control" id="area_small" placeholder="Введите площадь" name="area_small"  required>      
+        <input type="number" class="form-control" id="area_small" placeholder="Введите площадь" name="area_small" step='0.01'>      
     </div>
     <div class="form-group">
         <label for="material_wall">Материал стен</label>
-        <input type="text" class="form-control" id="material_wall" placeholder="Введите материал" name="material_wall"  required>      
+        <input type="text" class="form-control" id="material_wall" placeholder="Введите материал" name="material_wall">      
     </div>
     <div class="form-group">
         <label for="material_floor">Материал перекрытий</label>
-        <input type="text" class="form-control" id="material_floor" placeholder="Введите материал" name="material_floor"  required>      
+        <input type="text" class="form-control" id="material_floor" placeholder="Введите материал" name="material_floor">      
     </div>
     <div class="form-group">
         <label for="edit">Текст</label>
@@ -120,16 +120,22 @@ var imgs_data = {
     'thumb': '',
     'imgs': []
 }
+
+
+
+
+
 Object.defineProperty(input1, 'value', {
     set: function(t) {
       
         if(arguments[0] != '')
         {
-            var str = ","+arguments[0];
-            var arr = str.split(",h");
            
-            imgs_data['thumb'] = "h"+arr[1];
-
+            var str = ","+arguments[0];
+            var arr = str.split(",/");
+           
+            imgs_data['thumb'] = "/"+arr[1];
+            console.log(arr);
             draw_imgs(imgs_data);
         }
         
@@ -146,11 +152,11 @@ Object.defineProperty(input2, 'value', {
         if(arguments[0] != '')
         {
             var str = ","+arguments[0];
-            var arr = str.split(",h");
+            var arr = str.split(",/");
             arr.shift();
             arr.forEach(function(el){
                 
-                    imgs_data['imgs'].push("h"+el);
+                    imgs_data['imgs'].push("/"+el);
             });
             
             draw_imgs(imgs_data);
@@ -163,14 +169,19 @@ Object.defineProperty(input2, 'value', {
     }
 });
 
+var alive = $('#alive')[0];
+function alive_render()
+{
+    if(alive.checked){
+        $('#out_date')[0].style.display = 'none';
+    }
+    else{
+        $('#out_date')[0].style.display = 'block';
+    }
+}
 
-
-
-
-
-
-
-
+alive_render();
+alive.addEventListener('click', alive_render);
 
 
 
@@ -219,6 +230,15 @@ var imgs_real = $('#imgs_real')[0];
 
 imgs_data['thumb'] = thumb_real.value;
 imgs_data['imgs'] = JSON.parse(imgs_real.value);
+var form = $('#form')[0];
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    console.log('submit');
+    thumb_real.value = imgs_data['thumb'];
+    imgs_real.value = JSON.stringify(imgs_data['imgs']);
+    form.submit();
+});
+
 console.log(imgs_data);
 draw_imgs(imgs_data);
 $( function() {

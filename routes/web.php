@@ -32,7 +32,7 @@ Route::post('/admin/news/{id}', 'AdminController@update_news');
 Route::post('/admin/news/{id}/delete', 'AdminController@delete_news');
 
 Route::get('/admin/house/new', 'AdminController@new_house');
-
+Route::post('/admin/house/new', 'AdminController@create_house');
 
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 

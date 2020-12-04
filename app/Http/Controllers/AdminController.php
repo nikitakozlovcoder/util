@@ -106,8 +106,8 @@ class AdminController extends Controller
         $house->title = $this->fallback('title', $request);
         $house->date_in = $this->fallback('date_in', $request);
         $house->date_out = $this->fallback('date_out', $request);
-        $house->thumb = $this->fallback('thumb', $request);
-        $house->imgs = $this->fallback('imgs', $request, "[]");
+        $house->thumb = $this->fallback('thumb_real', $request);
+        $house->imgs = $this->fallback('imgs_real', $request, "[]");
         $house->content = $this->fallback('content', $request);
         $house->alive = $request->has('alive');
         $house->date_built = $this->fallback('date_built', $request);
