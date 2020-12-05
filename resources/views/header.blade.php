@@ -35,8 +35,8 @@
                   <a href="/tariffs">Тарифы</a>
 
                 </li>
-                <li class="dropdown">
-                  <a href="#">Blog</a>
+                <li class="dropdown {{ Request::is('houses') ? 'active' : '' }}">
+                  <a href="/houses">Дома</a>
 
                 </li>
 

@@ -19,7 +19,7 @@
     <br>
     <div class="form-group">
         <label for="title">Заголовок</label>
-        <input type="text" class="form-control" id="title" placeholder="Введите заголовок" name="title" required>
+        <input type="text" class="form-control" id="title" placeholder="Введите заголовок" name="title" required value="{{$news->title}}">
         
     </div>
     <br>
@@ -34,7 +34,7 @@
             </a>
              
           </span>
-          <input id="thumbnail" class="form-control" type="text" name="thumb">
+          <input id="thumbnail" class="form-control" type="text" name="thumb" value="{{$news->thumb}}">
           <span class="input-group-btn">
             <button type="button" class="btn btn-danger delete-thumb">Удалить</button>         
           </span>
@@ -43,12 +43,12 @@
     <br>
     <div class="form-group">
         <label for="date">Дата</label>
-        <input type="text" class="form-control" id="date" placeholder="Введите дату" name="date" required>
+        <input type="text" class="form-control" id="date" placeholder="Введите дату" name="date" required value="{{$news->mydate}}">
         
     </div>
     <div class="form-group">
         <label for="edit">Текст новости</label>
-        <textarea name="content" id="edit"></textarea>
+        <textarea name="content" id="edit">{{$news->content}}</textarea>
     </div>
     <br>
     <button type="submit" class="btn btn-primary">Сохранить</button>

@@ -45,7 +45,7 @@
             @if($n->thumb != '')
               <div class="span4">
                 <div class="post-image">
-                  <a href="{{$n->thumb}}"><img src="{{$n->thumb}}" alt="" /></a>
+                  <a href="{{$n->thumb}}" target="_blank"><img src="{{$n->thumb}}" alt="" /></a>
                 </div>
               </div>
             @endif

@@ -40,9 +40,9 @@
       @include('footer')
 </body>
 <script>
-$( "table").wrap( "<div class='table-responsive'></div>" );
-$('table').each(function() {
-  $(this).addClass('table')
-})
+$( ".tiny-text").find('table').wrap( "<div class='table-responsive'></div>" );
+  $('table').each(function() {
+    $(this).addClass('table')
+  })
 </script>
 </html>

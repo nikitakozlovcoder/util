@@ -22,6 +22,9 @@
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
    
     <style>
+      .col-delete .btn{
+        padding: 0 10px;
+      }
       .admin-imgs {
         width: 100%;
         display: flex;
@@ -118,6 +121,7 @@
         background-color: #81ab35 !important;
         border-color: #81ab35 !important;
       }
+      
     </style>
      
 </head>

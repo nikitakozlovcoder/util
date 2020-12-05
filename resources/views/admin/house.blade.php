@@ -20,7 +20,7 @@
     <br>
     <div class="form-group">
         <label for="title">Адрес</label>
-        <input type="text" class="form-control" id="title" placeholder="Введите адрес" name="title" required>
+        <input type="text" class="form-control" id="title" placeholder="Введите адрес" name="title" required value='{{$house->title}}'>
         
     </div>
     <br>
@@ -55,7 +55,7 @@
     <br>
     <div class="form-group">
         <label for="date_in">Дата принятия в управление</label>
-        <input type="text" class="form-control" id="date_in" placeholder="Введите дату" name="date_in"  required>      
+        <input type="text" class="form-control" id="date_in" placeholder="Введите дату" name="date_in"  required value='{{$house->date_in}}'>      
     </div>
      <div class="form-group">
                             <div class="">
@@ -70,35 +70,35 @@
                         </div>
      <div class="form-group" id="out_date">
         <label for="date_out">Дата выхода из управления</label>
-        <input type="text" class="form-control" id="date_out" placeholder="Введите дату" name="date_out" >      
+        <input type="text" class="form-control" id="date_out" placeholder="Введите дату" name="date_out" value='{{$house->date_out}}'>      
     </div>
     <div class="form-group">
         <label for="date_built">Год постройки</label>
-        <input type="text" class="form-control" id="date_built" placeholder="Введите год" name="date_built">      
+        <input type="text" class="form-control" id="date_built" placeholder="Введите год" name="date_built"  value='{{$house->date_built}}'>      
     </div>
     <div class="form-group">
         <label for="cad_number">Кадастровый номер земельного участка</label>
-        <input type="text" class="form-control" id="cad_number" placeholder="Введите кадастровый номер" name="cad_number">      
+        <input type="text" class="form-control" id="cad_number" placeholder="Введите кадастровый номер" name="cad_number" value='{{$house->cad_number}}'>      
     </div>
      <div class="form-group">
         <label for="area_wide">Общая площадь</label>
-        <input type="number" class="form-control" id="area_wide" placeholder="Введите площадь" name="area_wide" step='0.01'>      
+        <input type="number" class="form-control" id="area_wide" placeholder="Введите площадь" name="area_wide" step='0.01' value='{{$house->area_wide}}'>      
     </div>
     <div class="form-group">
         <label for="area_small">Площадь земельного участка</label>
-        <input type="number" class="form-control" id="area_small" placeholder="Введите площадь" name="area_small" step='0.01'>      
+        <input type="number" class="form-control" id="area_small" placeholder="Введите площадь" name="area_small" step='0.01' value='{{$house->area_small}}'>      
     </div>
     <div class="form-group">
         <label for="material_wall">Материал стен</label>
-        <input type="text" class="form-control" id="material_wall" placeholder="Введите материал" name="material_wall">      
+        <input type="text" class="form-control" id="material_wall" placeholder="Введите материал" name="material_wall" value='{{$house->material_wall}}'>      
     </div>
     <div class="form-group">
         <label for="material_floor">Материал перекрытий</label>
-        <input type="text" class="form-control" id="material_floor" placeholder="Введите материал" name="material_floor">      
+        <input type="text" class="form-control" id="material_floor" placeholder="Введите материал" name="material_floor" value='{{$house->material_floor}}'>      
     </div>
     <div class="form-group">
         <label for="edit">Текст</label>
-        <textarea name="content" id="edit"></textarea>
+        <textarea name="content" id="edit">{{$house->content}}</textarea>
     </div>
     <br>
     <button type="submit" class="btn btn-primary">Сохранить</button>

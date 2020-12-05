@@ -112,7 +112,7 @@
          @foreach($news as $n)      
             <div class="span4" style="margin-top: 30px;">
               <div class="post-image">
-                <a href="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}"><img src="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}" alt=""></a>
+                <a href="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}" target="_blank"><img src="{{$n->thumb == '' ?  asset('assets/img/news.png') : $n->thumb}}" alt=""></a>
               </div>
              <!-- <div class="entry-meta">
                 <i class="icon-square icon-48 icon-pencil left"></i>

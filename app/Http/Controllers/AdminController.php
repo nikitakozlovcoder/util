@@ -94,6 +94,13 @@ class AdminController extends Controller
         return redirect()->route('admin.news_index');
     }
 
+    public function house_index()
+    {
+        $houses_alive = \App\House::orderBy('id', 'DESC')->where('alive', 1)->get();
+        $houses_not_alive = \App\House::orderBy('id', 'DESC')->where('alive', 0)->get();
+        return view('admin.houses_index', ['houses_alive'=> $houses_alive, 'houses_not_alive'=>$houses_not_alive]);
+    }
+
     public function new_house()
     {
         $house = new \App\House();
@@ -118,6 +125,38 @@ class AdminController extends Controller
         $house->material_floor = $this->fallback('material_floor', $request);
         $house->save();
         return redirect()->route('admin.house_index');
+    }
+
+    public function edit_house($id)
+    {
+        $house = \App\House::FindOrFail($id);
+        return view('admin.house', ['house'=> $house]);
+    }
+
+    public function update_house($id, Request $request)
+    {
+        $house = \App\House::FindOrFail($id);
+        $house->title = $this->fallback('title', $request);
+        $house->date_in = $this->fallback('date_in', $request);
+        $house->date_out = $this->fallback('date_out', $request);
+        $house->thumb = $this->fallback('thumb_real', $request);
+        $house->imgs = $this->fallback('imgs_real', $request, "[]");
+        $house->content = $this->fallback('content', $request);
+        $house->alive = $request->has('alive');
+        $house->date_built = $this->fallback('date_built', $request);
+        $house->cad_number = $this->fallback('cad_number', $request);
+        $house->area_wide = $this->fallback('area_wide', $request);
+        $house->area_small = $this->fallback('area_small', $request);
+        $house->material_wall = $this->fallback('material_wall', $request);
+        $house->material_floor = $this->fallback('material_floor', $request);
+        $house->save();
+        return redirect()->route('admin.house_index');
+    }
+
+    public function delete_house($id)
+    {
+        $news = \App\House::destroy($id);
+        return redirect()->back();
     }
     
 }

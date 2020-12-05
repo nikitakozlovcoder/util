@@ -30,9 +30,12 @@ Route::post('/admin/news/new', 'AdminController@create_news');
 Route::get('/admin/news/{id}', 'AdminController@edit_news');
 Route::post('/admin/news/{id}', 'AdminController@update_news');
 Route::post('/admin/news/{id}/delete', 'AdminController@delete_news');
-
+Route::get('/admin/houses', 'AdminController@house_index')->name('admin.house_index');
 Route::get('/admin/house/new', 'AdminController@new_house');
 Route::post('/admin/house/new', 'AdminController@create_house');
+Route::get('/admin/house/{id}', 'AdminController@edit_house');
+Route::post('/admin/house/{id}', 'AdminController@update_house');
+Route::post('/admin/house/{id}/delete', 'AdminController@delete_house');
 
 Route::get('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 

@@ -32,6 +32,7 @@
     </div>
   </section>
     <div class="container">
+  <div class="table-responsive">
   <table class="table table-houses">
   <thead>
     <tr>
@@ -41,27 +42,68 @@
     </tr>
   </thead>
   <tbody>
+  @foreach ($houses_alive as $ka=>$ha)
     <tr>
-      <th scope="row" class="col-fit">1</th>
-      <td class="col-min"><a href="#">10-й переулок, дом 117</a></td>
-      <td class="col-fit">01.12.2018</td>
-     
+      <th scope="row" class="col-fit">{{$ka+1}}</th>
+      <td class="col-min"><a href="/house/{{$ha->id}}">{{$ha->title}}</a></td>
+      <td class="col-fit">{{$ha->date_in}}</td>
     </tr>
-    <tr>
-      <th scope="row" class="col-fit">2</th>
-      <td class="col-min"><a href="#">Александровская ул., дом 48</a></td>
-      <td class="col-fit">01.04.2015</td>
-      
-    </tr>
-    <tr>
-      <th scope="row" class="col-fit">3</th>
-      <td class="col-min"><a href="#">Антона Глушко пер., дом 12</a></td>
-      <td class="col-fit">01.09.2015</td>
-      
-    </tr>
+  @endforeach   
   </tbody>
 </table>
-    </div>
-  </section>
-  </main>
-  @endsection
+</div>
+@if(count($houses_not_alive))
+<a href="#" id='table_toggle'>
++ Вышедшие из управления
+</a>
+<div class="table-responsive" id="table-out" style="display: none;">
+  <table class="table table-houses">
+  <thead>
+    <tr>
+      <th scope="col" class="col-fit">#</th>
+      <th scope="col" class="col-min">Адрес</th>
+      <th scope="col" class="col-fit" style="white-space: initial;">Дата вступления</th>
+      <th scope="col" class="col-fit" style="white-space: initial;">Дата выхода</th>
+    </tr>
+  </thead>
+  <tbody>
+        @foreach ($houses_not_alive as $kn=>$hn)
+    <tr>
+      <th scope="row" class="col-fit">{{$kn+1}}</th>
+      <td class="col-min"><a href="/admin/house/{{$hn->id}}">{{$hn->title}}</a></td>
+      <td class="col-fit">{{$hn->date_in}}</td>
+      <td class="col-fit">{{$hn->date_out}}</td>
+    </tr>
+    
+  @endforeach   
+  </tbody>
+</table>
+</div>
+@endif
+</div>
+</section>
+</main>
+<script>
+
+
+var out = document.getElementById('table-out');
+var table_out_toggle = document.getElementById('table_toggle');
+if(table_out_toggle){
+var flag = true;
+table_out_toggle.addEventListener('click', function(e){
+  e.preventDefault();
+  if(flag){
+    table_out_toggle.innerHTML = '- Вышедшие из управления';
+    out.style.display = 'block';
+  }
+  else{
+    table_out_toggle.innerHTML = '+ Вышедшие из управления';
+    out.style.display = 'none';
+  }
+  flag = !flag;
+})
+}
+
+</script>
+@endsection
+
