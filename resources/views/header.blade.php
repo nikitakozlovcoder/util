@@ -13,7 +13,7 @@
             <div class="nav-menu-open">
               <img src="{{asset('assets/img/menu.png')}}" alt="">
             </div>
-          <hr>
+          <hr class="menu-line">
           <!-- end logo -->
           <!-- top menu -->
           <div class="navigation">
