@@ -26,6 +26,8 @@
     <link href="{{ asset('assets/css/sequence.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/color/default.css') }}" rel="stylesheet">
+    <link href="{{ asset('owl/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('owl/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootbase.css') }}" rel="stylesheet">
     <link href="{{ asset('css/tables.css') }}" rel="stylesheet">
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
@@ -39,6 +41,8 @@
 
       @include('footer')
 </body>
+
+<script src="{{ asset('owl/owl.carousel.min.js') }}"></script>
 <script>
 $( ".tiny-text").find('table').wrap( "<div class='table-responsive'></div>" );
   $('table').each(function() {

@@ -49,7 +49,12 @@
                 <div class="flexslider">
                   <ul class="slides">
                     <li style="display: block;">
+                    <a href="{{$house->thumbl}}" target="_blank">
                       <img src="{{$house->thumb}}" alt="" />
+                      </a>
+                      <div>
+                      
+                      </div>
                     </li>                 
                   </ul>
                 </div>
@@ -77,8 +82,8 @@
                 </div>
                 
               </div>
-                <div style="clear: both"></div>
-               
+                <div style="clear: both"></div>           
+                
                @else
                <div class="span6">
                 <div class="tiny-text">
@@ -105,7 +110,29 @@
               </div>
                
             @endif
+            <?php  $imgs_arr = json_decode($house->imgs) ?>
+            @if(count($imgs_arr))
+            <br>
+            <br>
+            <div class="span12">
+              <h2>Галерея</h2>
+               <hr>
             </div>
+           
+              <br>
+            <div class="span12">
+                <div class="owl-carousel">  
+                    @foreach($imgs_arr as $imurl)
+                      
+                   
+                    <div class="item-house"><a href="{{$imurl}}" target="_blank"><img src="{{$imurl}}" alt="" /></a></div>
+                     @endforeach
+                </div>
+                
+              </div>
+
+            </div>
+            @endif
 
            
           </article>
@@ -115,4 +142,27 @@
     </div>
   </section>
   </main>
+
+  <script>
+  
+  $(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+      loop: {{count($imgs_arr)>5? 'true' : 'false'}},
+      margin:20,
+      nav:true,
+      responsive:{
+          0:{
+              items:2
+          },
+          600:{
+              items:4
+          },
+          1000:{
+              items:5
+          }
+      }
+    })
+  })
+  
+   </script>
   @endsection
