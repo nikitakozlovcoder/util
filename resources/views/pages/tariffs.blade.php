@@ -19,12 +19,24 @@
       </div>
     </div>
   </section>
+   <section id="breadcrumb">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <ul class="breadcrumb notop">
+            <li><a href="/">Главная</a><span class="divider">/</span></li>
+            <li class="active">Тарифы</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
   <div class="container">
     <!-- Docs nav
     ================================================== -->
     <div class="row">
       
-      <div class="span10 offset1">
+      <div class="span12">
         <!-- Download
         ================================================== -->
         
@@ -35,6 +47,7 @@
         {!! $page->content !!}
         </section>
       </div>
+      <div style="clear:both;"></div>
     </div>
   </div>
 </main>

@@ -24,7 +24,7 @@
       <div class="row">
         <div class="span12">
           <ul class="breadcrumb notop">
-            <li><a href="/">Home</a><span class="divider">/</span></li>
+            <li><a href="/">Главная</a><span class="divider">/</span></li>
             <li class="active">About</li>
           </ul>
         </div>
@@ -129,6 +129,7 @@
           <!--end: Accordion -->
         </div>
       </div>
+      <div style="clear:both;"></div>
     </div>
   </section>
   </main>

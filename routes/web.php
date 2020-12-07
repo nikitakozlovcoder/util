@@ -18,6 +18,7 @@ Route::get('/about', 'PagesController@about');
 Route::get('/news', 'PagesController@news');
 Route::get('/tariffs', 'PagesController@tariffs');
 Route::get('/houses', 'PagesController@houses');
+Route::get('/house/{id}', 'PagesController@house');
 Route::get('/admin', 'AdminController@index');
 Route::get('/admin/about', 'AdminController@edit_about');
 Route::post('/admin/about', 'AdminController@update_about');

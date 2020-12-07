@@ -24,7 +24,7 @@
       <div class="row">
         <div class="span12">
           <ul class="breadcrumb notop">
-            <li><a href="/">Home</a><span class="divider">/</span></li>
+            <li><a href="/">Главная</a><span class="divider">/</span></li>
             <li class="active">Blog right sidebar</li>
           </ul>
         </div>
@@ -53,6 +53,7 @@
 </table>
 </div>
 @if(count($houses_not_alive))
+<br>
 <a href="#" id='table_toggle'>
 + Вышедшие из управления
 </a>
@@ -70,7 +71,7 @@
         @foreach ($houses_not_alive as $kn=>$hn)
     <tr>
       <th scope="row" class="col-fit">{{$kn+1}}</th>
-      <td class="col-min"><a href="/admin/house/{{$hn->id}}">{{$hn->title}}</a></td>
+      <td class="col-min"><a href="/house/{{$hn->id}}">{{$hn->title}}</a></td>
       <td class="col-fit">{{$hn->date_in}}</td>
       <td class="col-fit">{{$hn->date_out}}</td>
     </tr>

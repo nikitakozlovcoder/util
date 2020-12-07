@@ -299,6 +299,25 @@ $( function() {
                   linkListener(dialog);
                 });
         },
+        style_formats_merge: true,
+        style_formats: [
+          {
+              title: 'Обтекание справа',
+              selector: 'img',
+              styles: {
+                  'float': 'left', 
+                  'margin-right': '25px'
+              }
+          },
+          {
+              title: 'Обтекание слева',
+              selector: 'img', 
+              styles: {
+                  'float': 'right', 
+                  'margin-right': '25px'
+              }
+          }
+        ],
         path_absolute : "",
         fontsize_formats: "8pt 11pt 10pt 12pt 14pt 18pt 24pt 36pt",
         selector: "textarea[name=content]",

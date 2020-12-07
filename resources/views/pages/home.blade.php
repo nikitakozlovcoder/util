@@ -128,6 +128,8 @@
                 <div class="tiny-text">
                   {!! $n->content !!}
                 </div>
+                <div style="clear: both"></div>
+                
               </div>
               <!-- end .entry-body -->
               <div class="clear">

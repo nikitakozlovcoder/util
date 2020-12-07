@@ -33,5 +33,11 @@ class PagesController extends Controller
         $houses_not_alive = \App\House::orderBy('id', 'DESC')->where('alive', 0)->get();
         return view('pages.houses', ['houses_alive'=> $houses_alive, 'houses_not_alive'=>$houses_not_alive]);
     }
+
+    public function house($id)
+    {
+        $house = \App\House::findOrFail($id);
+        return view('pages.house', ['house'=> $house]);
+    }
     
 }
