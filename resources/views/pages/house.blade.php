@@ -49,7 +49,7 @@
                 <div class="flexslider">
                   <ul class="slides">
                     <li style="display: block;">
-                    <a href="{{$house->thumbl}}" target="_blank">
+                    <a href="{{$house->thumb}}" target="_blank">
                       <img src="{{$house->thumb}}" alt="" />
                       </a>
                       <div>
@@ -65,13 +65,16 @@
                 <div class="project-widget">
                  <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
                   <ul class="project-detail">
-                    <li><label>Project name :</label> Very nice project</li>
-                    <li><label>Category :</label> Web design</li>
-                    <li><label>Project date :</label> 2 March 2013</li>
-                    <li><label>Project link :</label> <a href="#">www.somelink.com</a></li>
-                    <li><label>Project name :</label> Very nice project</li>
-                    <li><label>Category :</label> Web design</li>
-                    <li><label>Project name :</label> Very nice project</li>
+                    <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
+                    @if(!$house->alive)
+                      <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
+                    @endif
+                    <li><label>Год постройки:</label> {{$house->date_built}}</li>
+                    <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
+                    <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>     
+                    <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
+                    <li><label>Материал стен:</label> {{$house->material_wall}}</li>
+                    <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
                    
                   </ul>
                 </div>
@@ -96,13 +99,17 @@
                 <div class="project-widget">
                  <!-- <h4><i class="icon-48 icon-beaker"></i> Info</h4>-->
                   <ul class="project-detail">
-                    <li><label>Project name :</label> Very nice project</li>
-                    <li><label>Category :</label> Web design</li>
-                    <li><label>Project date :</label> 2 March 2013</li>
-                    <li><label>Project link :</label> <a href="#">www.somelink.com</a></li>
-                    <li><label>Project name :</label> Very nice project</li>
-                    <li><label>Category :</label> Web design</li>
-                    <li><label>Project name :</label> Very nice project</li>
+                    <li><label>Дата принятия в управление:</label> {{$house->date_in}}</li>
+                    @if(!$house->alive)
+                      <li><label>Дата выхода из управления:</label> {{$house->date_out}}</li>
+                    @endif
+                    <li><label>Год постройки:</label> {{$house->date_built}}</li>
+                    <li><label>Общая площадь:</label> <span style="white-space: nowrap">{{$house->area_wide}} м<sup>2</sup></span></li>
+                    <li><label>Площадь земельного участка:</label> <span style="white-space: nowrap">{{$house->area_small}} м<sup>2</sup></span></li>     
+                    <li><label>Кадастровый номер земельного участка:</label> {{$house->cad_number}}</li>
+                    <li><label>Материал стен:</label> {{$house->material_wall}}</li>
+                    <li><label>Материал перекрытий:</label> {{$house->material_floor}}</li>
+                   
                    
                   </ul>
                 </div>
