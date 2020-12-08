@@ -25,7 +25,7 @@
         <div class="span12">
           <ul class="breadcrumb notop">
             <li><a href="/">Главная</a><span class="divider">/</span></li>
-            <li class="active">About</li>
+            <li class="active">О нас</li>
           </ul>
         </div>
       </div>

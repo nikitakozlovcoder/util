@@ -25,7 +25,7 @@
         <div class="span12">
           <ul class="breadcrumb notop">
             <li><a href="/">Главная</a><span class="divider">/</span></li>
-            <li class="active">Blog right sidebar</li>
+            <li class="active">Дома</li>
           </ul>
         </div>
       </div>
@@ -38,7 +38,7 @@
     <tr>
       <th scope="col" class="col-fit">#</th>
       <th scope="col" class="col-min">Адрес</th>
-      <th scope="col" class="col-fit" style="white-space: initial;">Дата вступления</th>
+      <th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата начала</span> управления</th>
     </tr>
   </thead>
   <tbody>
@@ -63,8 +63,8 @@
     <tr>
       <th scope="col" class="col-fit">#</th>
       <th scope="col" class="col-min">Адрес</th>
-      <th scope="col" class="col-fit" style="white-space: initial;">Дата вступления</th>
-      <th scope="col" class="col-fit" style="white-space: initial;">Дата выхода</th>
+      <th scope="col" class="col-fit" style="white-space: initial;"> <span style="white-space: nowrap;">Дата прекращения</span> управления</th>
+      <th scope="col" class="col-fit" style="white-space: initial;"><span style="white-space: nowrap;">Дата начала</span> управления</th>
     </tr>
   </thead>
   <tbody>

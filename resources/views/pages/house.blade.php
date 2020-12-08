@@ -26,7 +26,7 @@
           <ul class="breadcrumb notop">
             <li><a href="/">Главная</a><span class="divider">/</span></li>
             <li><a href="/houses">Дома</a><span class="divider">/</span></li>
-            <li class="active">About</li>
+            <li class="active">{{$house->title}}</li>
           </ul>
         </div>
       </div>
@@ -154,7 +154,7 @@
   
   $(document).ready(function(){
   $('.owl-carousel').owlCarousel({
-      loop: {{count($imgs_arr)>5? 'true' : 'false'}},
+      loop: {{count($imgs_arr)>9? 'true' : 'false'}},
       margin:20,
       nav:true,
       responsive:{
