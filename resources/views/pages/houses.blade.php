@@ -9,10 +9,8 @@
         <div class="row">
           <div class="span12">
             <div class="centered">
-              <h3>Blog right sidebar</h3>
-              <p>
-                Lorem ipsum dolor sit amet, modus salutatus honestatis ex mea. Sit cu probo putant. Nam ne impedit atomorum.
-              </p>
+              <h4 style="color: white;">Дома в управлении <br> Компании ООО "Уютный Мир"</h3>
+              
             </div>
           </div>
         </div>

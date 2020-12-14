@@ -11,7 +11,8 @@
   <li><a href="/admin/about" class="admin-link">О нас</a></li>
   <li><a href="/admin/tariffs" class="admin-link">Тарифы</a></li> 
   <li><a href="/admin/news" class="admin-link">Новости</a></li>   
-   <li><a href="/admin/houses" class="admin-link">Дома</a></li>   
+  <li><a href="/admin/houses" class="admin-link">Дома</a></li>   
+  <li><a href="/admin/contacts" class="admin-link">Контакты</a></li>   
 </ul>
 </div>
 

@@ -39,6 +39,10 @@
                   <a href="/houses">Дома</a>
 
                 </li>
+                <li class="dropdown {{ Request::is('contacts') ? 'active' : '' }}">
+                  <a href="/contacts">Контакты</a>
+
+                </li>
 
               </ul>
             </nav>

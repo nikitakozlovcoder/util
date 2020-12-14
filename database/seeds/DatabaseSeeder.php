@@ -10,9 +10,10 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
+    {   
         $this->call(UserSeeder::class);
         $this->call(AboutPageSeeder::class);
         $this->call(TariffPageSeeder::class);
+        $this->call(ContactsPageSeeder::class);
     }
 }

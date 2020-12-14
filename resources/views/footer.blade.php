@@ -2,7 +2,7 @@
 <footer class="footer">
     <div class="container">
       <div class="row">
-      <div class="span3">
+      <div class="span4">
           <div class="widget">
             <!-- logo -->
            <a class="brand logo" href="/">
@@ -11,14 +11,18 @@
               Уютный <span class="brand-char">М</span>ир
             </div></a>
             <!-- end logo -->
+            <?php $contacts = \App\ContactsPage::all()->first(); ?>
             <address>
-							<strong>Registered Companyname, Inc.</strong><br>
-							 8895 Somename Ave, Suite 600<br>
+							<strong>ООО «Уютный Мир»</strong><br>
+              {{$contacts->addr}} <br>
+							 <!--8895 Somename Ave, Suite 600<br> 
 							 San Francisco, CA 94107<br>
-							<abbr title="Phone">P:</abbr> (123) 456-7890
+							<abbr title="Tel">T:</abbr>--> 
+              {{$contacts->phone1}}
 						</address>
           </div>
         </div>
+        <!--
         <div class="span9">
           <div class="widget">
             <h5>Browse pages</h5>
@@ -30,7 +34,7 @@
               <li><a href="#">Meet the team</a></li>
             </ul>
           </div>
-        </div>
+        </div> -->
        <!-- <div class="span4">
           <div class="widget">
             <h5>Recent blog posts</h5>

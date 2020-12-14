@@ -40,4 +40,9 @@ class PagesController extends Controller
         return view('pages.house', ['house'=> $house]);
     }
     
+    public function contacts()
+    {
+        $page = \App\ContactsPage::all()->first();
+        return view('pages.contacts', ['page'=> $page]);
+    }
 }

@@ -20,7 +20,7 @@
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap-responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/docs.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/prettyPhoto.css') }}" rel="stylesheet">
+    <!--<link href="{{ asset('assets/css/prettyPhoto.css') }}" rel="stylesheet">-->
     <link href="{{ asset('assets/js/google-code-prettify/prettify.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/flexslider.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/sequence.css') }}" rel="stylesheet">

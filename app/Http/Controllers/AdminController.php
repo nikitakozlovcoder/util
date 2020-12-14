@@ -22,6 +22,29 @@ class AdminController extends Controller
         $page = \App\AboutPage::All()->first();
         return view('admin.about', ['page' => $page]);
     }
+
+    public function edit_contacts()
+    {
+        $page = \App\ContactsPage::All()->first();
+        return view('admin.contacts', ['page' => $page]);
+    }
+    public function update_contacts(Request $request)
+    {
+        $page = \App\ContactsPage::All()->first();
+        $page->phone1 = $this->fallback('phone1', $request);
+        $page->phone2 = $this->fallback('phone2', $request);
+        $page->email = $this->fallback('email', $request);
+        $page->addr = $this->fallback('addr', $request);
+        $page->ogrn = $this->fallback('ogrn', $request);
+        $page->inn = $this->fallback('inn', $request);
+        $page->rs = $this->fallback('rs', $request);
+        $page->head = $this->fallback('head', $request);
+        $page->show_social = $request->has('show_social');
+        $page->social = $this->fallback('social', $request);
+        $page->content = $this->fallback('content', $request);
+        $page->save();
+        return redirect()->back();
+    }
     public function update_about(Request $request)
     {
         $page = \App\AboutPage::All()->first();
