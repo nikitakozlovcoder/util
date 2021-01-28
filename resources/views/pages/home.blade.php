@@ -18,9 +18,9 @@
                       <h2 style="padding: 5px 10px;">Уютный Мир</h2>
                       <br>
                       <h3>Управляющая компания</h3>
-                      <p class="home-big-text">
+                      <!--<p class="home-big-text">
                         Lorem ipsum dolor sit amet, munere commodo ut nam, quod volutpat in per. At nec case iriure, consul recteque nec et.
-                      </p>
+                      </p> -->
                      <!-- <a class="btn btn-success" href="#">Learn more &raquo;</a>-->
                     </div>
                     <img class="slider_img animate-in home-big-img" src="assets/img/city.png" alt="" >
@@ -87,10 +87,10 @@
             <div class="row">
               <div class="span12" style="margin-left: 0;">
                 <div class="tagline_text">
-                  <h3>Lorem ipsum dolor sit amet.</h2>
-                  <p>
+                  <h3 class="contact_with_us_h3">Свяжитесь с нами</h2>
+                  <!--<p>
                     Lorem ipsum dolor sit amet, vix ceteros noluisse intellegat ne, ex nec insolens liberavisse, no adhuc causae nominati duo.
-                  </p>
+                  </p>-->
                 </div>
                 <div class="btn-toolbar cta">
                   <a class="btn btn-large btn-color span4 offset4" href="/contacts">
@@ -104,7 +104,8 @@
         </div>
       </div>
       @if(count($news))
-      <div class="row">
+      
+      <div class="row" style="">
         <div class="home-posts">
           <div class="span12">
             <h3>Свежие новости</h3>

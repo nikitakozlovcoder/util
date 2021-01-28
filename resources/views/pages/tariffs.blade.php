@@ -3,22 +3,23 @@
 
 @section('content')
 <main style="margin-top: 100px;">
+<!--
 <section id="subintro">
     <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
           <div class="span12">
             <div class="centered">
-              <h3>Overview</h3>
+              <h3>About us</h3>
               <p>
-                Overview of the template, its contents, and how to get started with serenity template..
+                Lorem ipsum dolor sit amet, modus salutatus honestatis ex mea. Sit cu probo putant. Nam ne impedit atomorum.
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
    <section id="breadcrumb">
     <div class="container">
       <div class="row">
